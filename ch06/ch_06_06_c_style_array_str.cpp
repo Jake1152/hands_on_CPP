@@ -7,6 +7,14 @@ using namespace std;
 
 int main()
 {
+
+    char    source[] = "Copy this!";
+    char    dest[5];
+    strcpy(dest, source);
+ 
+    cout << "source " << source << endl;
+    cout << "dest " << dest << endl;
+
     // char    my_str[] = "string";
 
     // for (int i = 0; i < 7; i++)
@@ -37,26 +45,26 @@ int main()
     //     idx++;
     // }
 
-    char    source[] = "Copy this!";
-    char    dest[50];
-    strcpy(dest, source);
+    // char    source[] = "Copy this!";
+    // char    dest[50];
+    // strcpy(dest, source);
  
-    cout << source << endl;
-    cout << dest << endl;
+    // cout << source << endl;
+    // cout << dest << endl;
 
-    // strcat() 이어붙임
-    // strcmp() 비교
+    // // strcat() 이어붙임
+    // // strcmp() 비교
 
-    strcat(dest, source);
-    cout << source << endl;
-    cout << dest << endl;
+    // strcat(dest, source);
+    // cout << source << endl;
+    // cout << dest << endl;
 
-    cout << strcmp(source, dest) << endl;
-    // 같으면 0, 같지않으면 다른 값
-    if (strcmp(source, dest) == 0)
-    {
-        ;   
-    }
+    // cout << strcmp(source, dest) << endl;
+    // // 같으면 0, 같지않으면 다른 값
+    // if (strcmp(source, dest) == 0)
+    // {
+    //     ;   
+    // }
 
     // std::string 대체로 이것씀
     return (0);
