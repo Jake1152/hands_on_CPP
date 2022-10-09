@@ -4,75 +4,60 @@
 
 using namespace std;
 
-void    last()
+// void last() throw(int)
+
+void    last() throw(int)
 {
-    cout << "last" << endl;
+    cout << "Last" << endl;
     cout << "Throws exception" << endl;
 
-    throw - 1;
-    cout << "End last" << endl;
+    throw 'a';
+
+    cout << "End Last" << endl;
 }
 
 void    third()
 {
-    throw();
-    cout << "third" << endl;
+    cout << "Third" << endl;
 
-    try
-    {
-        last();
-    }
-    catch (int)
-    {
-        cerr << "third caught int exception" << endl;
-    }
-    catch (...) // catch all handlers
-    {
-        cerr << "ellipses" << endl;
-    }
-
-     cout << "End third" << endl;
+    last();
+    cout << "End Third" << endl;
 }
 
 void    second()
 {
-    throw();
-    cout << "second" << endl;
+    cout << "Secod" << endl;
 
     try
     {
-        second();
+        third();
     }
-    catch (int)
+    catch(const std::exception& e)
     {
-        cerr << "second caught int exception" << endl;
+        std::cerr << e.what() << '\n';
     }
-
-     cout << "End second" << endl;
+    cout << "End secod" << endl;
 }
 
 void    first()
 {
-    throw();
-    cout << "first" << endl;
+    cout << "First" << endl;
 
     try
     {
         second();
     }
-    catch (int)
+    catch(double)
     {
-        cerr << "frist caught int exception" << endl;
+        std::cerr << "First caught double exception" << '\n';
     }
-
     cout << "End first" << endl;
-    
 }
 
 int main()
 {
     //try, catch, throw
-    cout << "strat" << endl;
+    cout << "Strat" << endl;
 
     try
     {
@@ -85,6 +70,10 @@ int main()
     {
         // do something to respond
         std::cerr << "main caugth int exception" << endl;
+    }
+    catch (...)
+    {
+        cerr << "... case" << endl;
     }
     return (0);
 }
